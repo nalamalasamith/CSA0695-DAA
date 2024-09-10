@@ -1,0 +1,24 @@
+ount = 0; count < V - 1; count++) {
+        int u = minKey(key, mstSet);
+        mstSet[u] = 1;
+        for (v = 0; v < V; v++)
+ 
+            if (graph[u][v] && mstSet[v] == 0 && graph[u][v] < key[v])
+                parent[v] = u, key[v] = graph[u][v];
+    }
+    printMST(parent, V, graph);
+}
+ 
+int main() {
+    printf("N.Samith--192210612");
+    int graph[V][V] = { { 0, 25, 0, 0, 0, 10, 0 },
+						{ 25, 0, 14, 0, 0, 0, 12 },
+            			{ 0, 14, 0, 11, 0, 0, 0 }, 
+						{ 0, 0, 11, 0, 20, 0, 17 }, 
+						{ 0, 0, 0, 20, 0, 23, 22 },
+						{ 10, 0, 0, 0, 23, 0, 0 },
+						{ 0, 12, 0, 0, 22, 0, 0 }
+						 };
+    primMST(graph);
+    return 0;
+}
